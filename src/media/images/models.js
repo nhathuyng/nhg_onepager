@@ -1,0 +1,26 @@
+export const models = [
+  {
+    model:
+      'https://res.cloudinary.com/dtoelewmy/image/upload/v1597159615/Screenshot_2020-07-13_at_17.47.52_vwuhvh.png',
+  },
+  {
+    model:
+      'https://res.cloudinary.com/dtoelewmy/image/upload/v1597159615/Screenshot_2020-07-13_at_17.48.32_zqno3q.png',
+  },
+  {
+    model:
+      'https://res.cloudinary.com/dtoelewmy/image/upload/v1597173142/Screenshot_2020-07-13_at_17.48.19_lzikws.png',
+  },
+  {
+    model:
+      'https://res.cloudinary.com/dtoelewmy/image/upload/v1597159616/Screenshot_2020-07-13_at_17.48.54_dcjvsn.png',
+  },
+  {
+    model:
+      'https://res.cloudinary.com/dtoelewmy/image/upload/v1597159615/Screenshot_2020-07-13_at_17.48.43_ue72wn.png',
+  },
+  {
+    model:
+      'https://res.cloudinary.com/dtoelewmy/image/upload/v1597159615/Screenshot_2020-07-13_at_17.48.06_r2qmje.png',
+  },
+];
