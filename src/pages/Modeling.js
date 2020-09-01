@@ -11,6 +11,7 @@ import {
 import { makeStyles } from '@material-ui/core/styles';
 import { models } from '../media/images/models';
 import ArrowRightIcon from '@material-ui/icons/ArrowRight';
+import RenderOnSight from './components/RenderOnSight';
 
 const useStyles = makeStyles((theme) => ({
   heading: {
@@ -62,40 +63,42 @@ const Modeling = () => {
 
   return (
     <React.Fragment>
-      <div className={classes.heading}>
-        <Typography align='center' variant='h2'>
-          {'modeling'.toUpperCase()}
+      <RenderOnSight>
+        <div className={classes.heading}>
+          <Typography align='center' variant='h2'>
+            {'modeling'.toUpperCase()}
+          </Typography>
+          <Typography align='center' variant='h3'>
+            [me - unable to smile]
+          </Typography>
+        </div>
+        <Grid
+          justify='space-between'
+          alignItems='center'
+          className={classes.modelSection}
+          container
+          item>
+          {models.map(({ model }, index) => (
+            <ModelCard key={index} model={model} />
+          ))}
+        </Grid>
+        <Typography align='center' variant='h5'>
+          <Link
+            underline='none'
+            target='_blank'
+            href='https://www.everydaypeople.de/maenner/item/huy-n'>
+            <Button
+              variant='outlined'
+              className={classes.modelBtn}
+              color='secondary'
+              endIcon={<ArrowRightIcon style={{ marginTop: '0.425rem' }} />}>
+              <Typography align='center' variant='h5'>
+                {'everydaypeople.de'.toUpperCase()}
+              </Typography>
+            </Button>
+          </Link>
         </Typography>
-        <Typography align='center' variant='h3'>
-          [me - unable to smile]
-        </Typography>
-      </div>
-      <Grid
-        justify='space-between'
-        alignItems='center'
-        className={classes.modelSection}
-        container
-        item>
-        {models.map(({ model }, index) => (
-          <ModelCard key={index} model={model} />
-        ))}
-      </Grid>
-      <Typography align='center' variant='h5'>
-        <Link
-          underline='none'
-          target='_blank'
-          href='https://www.everydaypeople.de/maenner/item/huy-n'>
-          <Button
-            variant='outlined'
-            className={classes.modelBtn}
-            color='secondary'
-            endIcon={<ArrowRightIcon style={{ marginTop: '0.425rem' }} />}>
-            <Typography align='center' variant='h5'>
-              {'everydaypeople.de'.toUpperCase()}
-            </Typography>
-          </Button>
-        </Link>
-      </Typography>
+      </RenderOnSight>
     </React.Fragment>
   );
 };

@@ -1,14 +1,14 @@
 export const projects = [
   {
-    link: 'https://formspree.io/',
+    link: 'https://de.wikipedia.org/wiki/Wikipedia:Hauptseite',
     title: 'dummy',
   },
   {
-    link: 'https://formspree.io/',
+    link: 'https://de.wikipedia.org/wiki/Wikipedia:Hauptseite',
     title: 'dummy2',
   },
   {
-    link: 'https://formspree.io/',
+    link: 'https://de.wikipedia.org/wiki/Wikipedia:Hauptseite',
     title: 'dummy3',
   },
 ];

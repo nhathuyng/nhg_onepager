@@ -1,26 +1,26 @@
 export const models = [
   {
     model:
-      'https://res.cloudinary.com/dtoelewmy/image/upload/v1597159615/Screenshot_2020-07-13_at_17.47.52_vwuhvh.png',
+      'https://ik.imagekit.io/ihqypb274v/OnePager_Data/Screenshot_2020-07-13_at_17.48.19_PtX5fb-FV7Dx.png',
   },
   {
     model:
-      'https://res.cloudinary.com/dtoelewmy/image/upload/v1597159615/Screenshot_2020-07-13_at_17.48.32_zqno3q.png',
+      'https://ik.imagekit.io/ihqypb274v/OnePager_Data/Screenshot_2020-07-13_at_17.48.06_61SLyh4skXEq.png',
   },
   {
     model:
-      'https://res.cloudinary.com/dtoelewmy/image/upload/v1597173142/Screenshot_2020-07-13_at_17.48.19_lzikws.png',
+      'https://ik.imagekit.io/ihqypb274v/OnePager_Data/Screenshot_2020-07-13_at_17.48.32_bIfn2tVP6hO.png',
   },
   {
     model:
-      'https://res.cloudinary.com/dtoelewmy/image/upload/v1597159616/Screenshot_2020-07-13_at_17.48.54_dcjvsn.png',
+      'https://ik.imagekit.io/ihqypb274v/OnePager_Data/Screenshot_2020-07-13_at_17.48.43_wK0au2QyVA.png',
   },
   {
     model:
-      'https://res.cloudinary.com/dtoelewmy/image/upload/v1597159615/Screenshot_2020-07-13_at_17.48.43_ue72wn.png',
+      'https://ik.imagekit.io/ihqypb274v/OnePager_Data/Screenshot_2020-07-13_at_17.48.54_-OoTFUs3xx.png',
   },
   {
     model:
-      'https://res.cloudinary.com/dtoelewmy/image/upload/v1597159615/Screenshot_2020-07-13_at_17.48.06_r2qmje.png',
+      'https://ik.imagekit.io/ihqypb274v/OnePager_Data/Screenshot_2020-07-13_at_17.47.52_4EnLoYIB4.png',
   },
 ];

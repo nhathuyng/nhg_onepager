@@ -10,6 +10,7 @@ import {
 import { makeStyles } from '@material-ui/core/styles';
 import OpenInNewIcon from '@material-ui/icons/OpenInNew';
 import { projects } from '../media/projects';
+import RenderOnSight from './components/RenderOnSight';
 
 const useStyles = makeStyles((theme) => ({
   heading: {
@@ -70,25 +71,27 @@ const Projects = () => {
 
   return (
     <React.Fragment>
-      <div className={classes.heading}>
-        <Typography align='center' variant='h2'>
-          {'projects'.toUpperCase()}
-        </Typography>
-        <Typography align='center' variant='h3'>
-          [mainly build with React,Typescript & Material UI]
-        </Typography>
-      </div>
+      <RenderOnSight>
+        <div className={classes.heading}>
+          <Typography align='center' variant='h2'>
+            {'projects'.toUpperCase()}
+          </Typography>
+          <Typography align='center' variant='h3'>
+            [mainly build with React,Typescript & Material UI]
+          </Typography>
+        </div>
 
-      <Grid
-        justify='space-between'
-        alignItems='center'
-        className={classes.projectSection}
-        container
-        item>
-        {projects.map((project) => (
-          <ProjectCard project={project} />
-        ))}
-      </Grid>
+        <Grid
+          justify='space-between'
+          alignItems='center'
+          className={classes.projectSection}
+          container
+          item>
+          {projects.map((project, index) => (
+            <ProjectCard key={index} project={project} />
+          ))}
+        </Grid>
+      </RenderOnSight>
     </React.Fragment>
   );
 };

@@ -10,7 +10,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import AlbumIcon from '@material-ui/icons/Album';
 import MusicNoteIcon from '@material-ui/icons/MusicNote';
-
+import RenderOnSight from './components/RenderOnSight';
 import ReactPlayer from 'react-player';
 
 const useStyles = makeStyles((theme) => ({
@@ -48,41 +48,43 @@ const Audio = () => {
   };
   return (
     <React.Fragment>
-      <div className={classes.heading}>
-        <Typography align='center' variant='h2'>
-          {'audio'.toUpperCase()}
-        </Typography>
-        <Typography align='center' variant='h3'>
-          [my voice + lots of special effects]
-        </Typography>
-      </div>
+      <RenderOnSight>
+        <div className={classes.heading}>
+          <Typography align='center' variant='h2'>
+            {'audio'.toUpperCase()}
+          </Typography>
+          <Typography align='center' variant='h3'>
+            [my voice + lots of special effects]
+          </Typography>
+        </div>
 
-      <Grid justify='center' className={classes.audioSection} container item>
-        <Grid item>
-          <Accordion
-            className={classes.acc}
-            expanded={expanded === 'panel1'}
-            onChange={handleChange('panel1')}>
-            <AccordionSummary
-              expandIcon={<ExpandMoreIcon />}
-              aria-controls='panel1bh-content'
-              id='panel1bh-header'>
-              <Typography className={classes.exp} align='center' variant='h5'>
-                open to experience
-              </Typography>
-              <AlbumIcon fontSize='large' />
-              <MusicNoteIcon fontSize='large' />
-            </AccordionSummary>
-            <AccordionDetails className={classes.details}>
-              <ReactPlayer
-                height='100%'
-                width='100%'
-                url='https://soundcloud.com/hu_cray/sets/2019-1'
-              />
-            </AccordionDetails>
-          </Accordion>
+        <Grid justify='center' className={classes.audioSection} container item>
+          <Grid item>
+            <Accordion
+              className={classes.acc}
+              expanded={expanded === 'panel1'}
+              onChange={handleChange('panel1')}>
+              <AccordionSummary
+                expandIcon={<ExpandMoreIcon />}
+                aria-controls='panel1bh-content'
+                id='panel1bh-header'>
+                <Typography className={classes.exp} align='center' variant='h5'>
+                  open to experience
+                </Typography>
+                <AlbumIcon fontSize='large' />
+                <MusicNoteIcon fontSize='large' />
+              </AccordionSummary>
+              <AccordionDetails className={classes.details}>
+                <ReactPlayer
+                  height='100%'
+                  width='100%'
+                  url='https://soundcloud.com/hu_cray/sets/2019-1'
+                />
+              </AccordionDetails>
+            </Accordion>
+          </Grid>
         </Grid>
-      </Grid>
+      </RenderOnSight>
     </React.Fragment>
   );
 };

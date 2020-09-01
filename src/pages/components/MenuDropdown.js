@@ -13,6 +13,7 @@ import {
 } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 import { Link } from 'react-scroll';
+import { Transition } from 'react-spring/renderprops';
 
 const menuList = [
   { item: 'projects' },
@@ -68,7 +69,9 @@ const MenuDropdown = () => {
     }
   };
 
-  const handleClickAway = () => setDropMenu(false);
+  const handleClickAway = () => {
+    setDropMenu(false);
+  };
 
   const Mitem = ({ listItem: { item }, variant, style }) => {
     return (
@@ -78,12 +81,14 @@ const MenuDropdown = () => {
           to={item}
           spy={true}
           smooth={true}
-          duration={600}>
+          duration={500}>
           <Typography variant={variant}>{item}</Typography>
         </Link>
       </MenuItem>
     );
   };
+
+  //?? on mobile works fine - Delay on the link to await the animation leaving - without delay it jumps back to top because animation leaving after scrolling down
 
   return (
     <ClickAwayListener onClickAway={handleClickAway}>
@@ -95,27 +100,57 @@ const MenuDropdown = () => {
           onClick={handleClick}>
           <Typography variant='h4'>work</Typography>
         </Button>
-        <Modal className={classes.modal} open={open} onClose={handleClose}>
-          <MenuList
-            className={classes.modalMenu}
-            id='simple-menu'
-            onClose={handleClose}>
-            {menuList.map((listItem) => (
-              <Mitem
-                style={classes.modalItem}
-                variant='h3'
-                listItem={listItem}
-              />
-            ))}
-          </MenuList>
-        </Modal>
+
+        <Transition
+          items={open}
+          from={{ opacity: 0 }}
+          enter={{ opacity: 1 }}
+          leave={{ opacity: 0 }}>
+          {(open) =>
+            open &&
+            ((props) => (
+              <Modal
+                style={props}
+                className={classes.modal}
+                open={open}
+                onClose={handleClose}>
+                <Transition
+                  items={open}
+                  from={{ marginTop: -500 }}
+                  enter={{ marginTop: 0 }}
+                  leave={{ marginTop: -500 }}>
+                  {(open) =>
+                    open &&
+                    ((props) => (
+                      <MenuList
+                        style={props}
+                        className={classes.modalMenu}
+                        id='simple-menu'
+                        onClose={handleClose}>
+                        {menuList.map((listItem, index) => (
+                          <Mitem
+                            key={index}
+                            style={classes.modalItem}
+                            variant='h3'
+                            listItem={listItem}
+                          />
+                        ))}
+                      </MenuList>
+                    ))
+                  }
+                </Transition>
+              </Modal>
+            ))
+          }
+        </Transition>
+
         <Collapse style={{ position: 'absolute' }} in={dropMenu}>
           <MenuList
             className={classes.menuList}
             id='simple-menu'
             onClose={handleClose}>
-            {menuList.map((listItem) => (
-              <Mitem variant='h6' listItem={listItem} />
+            {menuList.map((listItem, index) => (
+              <Mitem key={index} variant='h6' listItem={listItem} />
             ))}
           </MenuList>
         </Collapse>

@@ -6,8 +6,10 @@ import {
   CardMedia,
   CardContent,
 } from '@material-ui/core';
+import { Skeleton } from '@material-ui/lab';
 import { makeStyles } from '@material-ui/core/styles';
 import { videos } from '../media/videos';
+import RenderOnSight from './components/RenderOnSight';
 
 const useStyles = makeStyles((theme) => ({
   heading: {
@@ -49,25 +51,31 @@ const Visuals = () => {
 
   return (
     <React.Fragment>
-      <div className={classes.heading}>
-        <Typography align='center' variant='h2'>
-          {'visuals'.toUpperCase()}
-        </Typography>
-        <Typography align='center' variant='h3'>
-          [mainly made with Photoshop]
-        </Typography>
-      </div>
+      <RenderOnSight>
+        <div className={classes.heading}>
+          <Typography align='center' variant='h2'>
+            {'visuals'.toUpperCase()}
+          </Typography>
+          <Typography align='center' variant='h3'>
+            [mainly made with Photoshop]
+          </Typography>
+        </div>
 
-      <Grid
-        justify='space-between'
-        alignItems='center'
-        className={classes.visualsSection}
-        container
-        item>
-        {videos.map(({ video }, index) => (
-          <VisualCard key={index} video={video} />
-        ))}
-      </Grid>
+        <Grid
+          justify='space-between'
+          alignItems='center'
+          className={classes.visualsSection}
+          container
+          item>
+          {videos.map(({ video }, index) =>
+            video ? (
+              <VisualCard key={index} video={video} />
+            ) : (
+              <Skeleton variant='rect' width={210} height={118} />
+            )
+          )}
+        </Grid>
+      </RenderOnSight>
     </React.Fragment>
   );
 };

@@ -31,7 +31,7 @@ const useStyles = makeStyles((theme) => ({
     right: 0,
     display: 'flex',
     justifyContent: 'flex-end',
-    marginTop: '2rem',
+    margin: '2rem 2.5rem',
   },
   hireButton: {
     paddingLeft: '2rem',
